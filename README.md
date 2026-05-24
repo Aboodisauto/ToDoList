@@ -1,31 +1,47 @@
-ToDoList is a desktop application built with C# and Windows Forms for managing tasks and projects. It presents a simple, Kanban-style interface to help users visualize their workflow and track the progress of tasks from creation to completion.
+ToDoList
+Introduction
+ToDoList is a simple web application for managing daily tasks. This project allows users to create, view, complete, and delete tasks, helping organize personal or professional to-do lists efficiently. The application utilizes a combination of backend and frontend technologies to provide a responsive and interactive user experience.
 
 Features
-Task Management: Create tasks with a name, detailed description, assigned person, and a specific due date.
-Kanban Board: Organize tasks across three status columns: "Did-not Start," "Under-Construction," and "Construction Has Completed."
-Workflow Progression: Move tasks between columns using navigation buttons on each task card to reflect their current status.
-Due Date Visualization: Task cards are automatically color-coded based on proximity to the due date for an at-a-glance status check:
-Green: Due in 10 or more days.
-Orange: Due in less than 10 days.
-Red: Due in less than 5 days.
-Gray: Overdue.
-Project Persistence: Save the entire state of your task board, including all tasks and their statuses, to a binary (.bin) file.
-Load Projects: Open and continue working on previously saved projects.
-Tech Stack
-C#
-.NET Framework 4.8
-Windows Forms
-Getting Started
-Prerequisites
-.NET Framework 4.8
-An IDE like Visual Studio
-Running the Application
-Clone the repository to your local machine.
-Open the ToDoList.sln file in Visual Studio.
-Build the solution to restore dependencies.
-Run the project (Press F5 or click the Start button). The application will automatically create a Projects directory within the build output folder (e.g., bin/Debug/Projects) for saving and loading project files.
-How to Use
-Add a Task: Click the Add New Task button. Fill in the task details in the form that appears and click Save. Input is validated to ensure all fields are completed and the due date is in the future.
-Manage Workflow: The new task will appear in the "Did-not Start" column. Use the > and < buttons on the task card to move it through the workflow stages.
-Save Your Board: Enter a name for your project in the "Project Name" text box and click Save Project. The current board state will be saved to a .bin file in the Projects directory.
-Load a Board: Click Open Project and select a previously saved .bin file to load its tasks and statuses onto the board.
+Add new tasks with descriptions.
+
+View a list of all current tasks.
+
+Mark tasks as completed.
+
+Delete tasks from the list.
+
+Visual feedback for completed and pending tasks.
+
+Persistent storage of tasks using a backend database.
+
+Usage
+Installation
+To use ToDoList, follow these steps:
+
+1
+Clone the repository
+Clone the project to your local machine using `git clone`.
+2
+Navigate to project directory
+Change your working directory to the project folder.
+3
+Install dependencies
+Run the appropriate package manager command (e.g., `npm install` or `composer install`).
+4
+Set up environment variables
+Configure any required environment variables for database connections.
+5
+Start the application
+Use the relevant start command (e.g., `npm start`, `php artisan serve`, or similar).
+6
+Access the application
+Open your web browser and go to the provided local URL.
+Task Management
+Adding a task: Enter a task description in the input field and submit to add it to your list.
+
+Viewing tasks: All tasks are displayed in a list format, distinguishing completed tasks from pending ones.
+
+Completing tasks: Click the checkbox or button next to a task to mark it as completed.
+
+Deleting tasks: Use the delete button associated with a task to remove it from the list.
