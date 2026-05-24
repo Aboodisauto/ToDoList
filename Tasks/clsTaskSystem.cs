@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ToDoList.Tasks
 {
+    [Serializable]
     public class clsTaskSystem
     {
         LinkedList<clsTask> _notStartedTasks;
@@ -50,6 +53,41 @@ namespace ToDoList.Tasks
             {
                 from.Remove(task);
             }
+        }
+        private void createNecessaryDirectory()
+        {
+            if (!Directory.Exists("Projects"))
+            {
+                Directory.CreateDirectory("Projects");
+            }
+        }
+        public void saveProject(string projectName)
+        {
+            createNecessaryDirectory();
+            BinaryFormatter formatter = new BinaryFormatter();
+            if(File.Exists($"Projects/{projectName}.bin"))
+            {
+                File.Delete($"Projects/{projectName}.bin");
+            }
+            using (FileStream stream = new FileStream($"Projects/{projectName}.bin", FileMode.Create, FileAccess.Write))
+            {
+                formatter.Serialize(stream, this);
+            }
+
+        }
+        public static clsTaskSystem LoadProject(string projectName)
+        {
+            clsTaskSystem taskSystem = new clsTaskSystem();
+            BinaryFormatter formatter = new BinaryFormatter();
+            if(projectName == null || !File.Exists($"Projects/{projectName}.bin"))
+            {
+                return null;
+            }
+            using (FileStream stream = new FileStream($"Projects/{projectName}.bin", FileMode.Open, FileAccess.Read))
+            {
+                taskSystem = (clsTaskSystem)formatter.Deserialize(stream);
+            }
+            return taskSystem;
         }
     }
 }

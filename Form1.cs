@@ -79,5 +79,39 @@ namespace ToDoList
         {
             _loadTaskstoUi();
         }
+
+        
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+        private void SaveProject()
+        {
+            string filePath = textBox1.Text;
+            _taskSystem.saveProject(System.IO.Path.GetFileNameWithoutExtension(filePath));
+            
+        }
+        private void LoadProject()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Binary files (*.bin)|*.bin|All files (*.*)|*.*";
+            openFileDialog.InitialDirectory = @"C:\Users\PCM\source\repos\Aboodisauto\ToDoList\bin\Debug\Projects";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = System.IO.Path.GetFileNameWithoutExtension(openFileDialog.FileName);
+                _taskSystem = clsTaskSystem.LoadProject(filePath);
+                textBox1.Text = filePath;
+                _loadTaskstoUi();
+            }
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SaveProject();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LoadProject();
+        }
     }
 }

@@ -74,6 +74,7 @@
             this.Controls.Add(this.label1);
             this.Name = "crtlTaskView";
             this.Size = new System.Drawing.Size(305, 108);
+            this.Load += new System.EventHandler(this.crtlTaskView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

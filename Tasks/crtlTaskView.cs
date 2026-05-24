@@ -20,17 +20,17 @@ namespace ToDoList.Tasks
         {
             label1.Text = _task.taskName;
             TimeSpan diff = _task.due - DateTime.Now;
-            if (diff.Days < 10)
+            if (diff.Days < 0)
             {
-                BackColor = Color.Orange;
+                BackColor = Color.DarkGray;
             }
             else if(diff.Days < 5)
             {
                 BackColor = Color.Red;
             }
-            else if(diff.Days < 0)
+            else if(diff.Days < 10)
             {
-                BackColor = Color.DarkGray;
+                BackColor = Color.Orange;
             }
             else
             {
@@ -42,6 +42,7 @@ namespace ToDoList.Tasks
             InitializeComponent();
             _task = Task;
             label1.Text = _task.taskName;
+            LoadData();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -52,6 +53,11 @@ namespace ToDoList.Tasks
         private void button1_Click(object sender, EventArgs e)
         {
             leftButtonClicked?.Invoke(this, e);
+        }
+
+        private void crtlTaskView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

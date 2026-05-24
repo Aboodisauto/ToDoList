@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToDoList.Tasks
 {
+    [Serializable]
     public class clsTask
     {
         private string _taskName;
