@@ -43,3 +43,30 @@ Follow these instructions to set up the project locally on your machine.
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/Aboodisauto/ToDoList.git](https://github.com/Aboodisauto/ToDoList.git)
+2. **Open the project:**
+   Navigate to the cloned folder and open ToDoList.slnx or ToDoList.csproj using Visual Studio.
+
+3. **Build the solution:**
+   Press Ctrl + Shift + B to build the project and restore any necessary dependencies.
+
+4. **Run the app:**
+   Press F5 or click the Start button in Visual Studio to launch the application.
+
+### 💡 Usage
+  **Task Managment**
+  
++Adding a task: Enter a task description in the input field and submit to add it to your list.
+
++Viewing tasks: All tasks are displayed in a list format, distinguishing completed tasks from pending ones.
+
++Completing tasks: Click the checkbox or button next to a task to mark it as completed.
+
++Deleting tasks: Use the delete button associated with a task to remove it from the list.
+
+### 🤝 Contributing
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+
+### 👨‍💻 Author
+Abdelrahman
+
+GitHub: @Aboodisauto
