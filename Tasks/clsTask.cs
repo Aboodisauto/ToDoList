@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToDoList.Tasks
 {
-    public class Task
+    public class clsTask
     {
         private string _taskName;
         private string _description;
@@ -32,7 +32,7 @@ namespace ToDoList.Tasks
             get { return _description; }
             set { _description = value; }
         }
-        public Task(string taskName, string description, DateTime due, string personAssigned)
+        public clsTask(string taskName, string description, DateTime due, string personAssigned)
         {
             _taskName = taskName;
             _description = description;

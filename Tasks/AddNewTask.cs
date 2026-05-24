@@ -12,18 +12,18 @@ namespace ToDoList.Tasks
 {
     public partial class AddNewTask : Form
     {
-        Task _task;
-        LinkedList<Task> _tasks;
+        clsTask _task;
+        public delegate void TaskCreatedHandler(clsTask task);
+        public event TaskCreatedHandler TaskCreated;
         enum enMode{
             Add,
             Edit
         }
         enMode Mode = enMode.Add;
-        public AddNewTask(LinkedList<Task> tasks)
+        public AddNewTask()
         {
             InitializeComponent();
-            _tasks = tasks;
-            _reset();
+            
         }
         void _LoadTaskInformation()
         {
@@ -33,11 +33,10 @@ namespace ToDoList.Tasks
             dateTimePicker1.Value = _task.due;
 
         }
-        public AddNewTask(Task task,LinkedList<Task> tasks)
+        public AddNewTask(clsTask task)
         {
             InitializeComponent();
             _task = task;
-            _tasks = tasks;
             _LoadTaskInformation();
         }
         private void _reset()
@@ -47,21 +46,16 @@ namespace ToDoList.Tasks
             textBox3.Text = "";
             dateTimePicker1.Value = DateTime.Now;
         }
-        Task createNewTask()
+        clsTask createNewTask()
         {
-            return new Task(textBox1.Text, textBox2.Text, dateTimePicker1.Value, textBox3.Text);
+            return new clsTask(textBox1.Text, textBox2.Text, dateTimePicker1.Value, textBox3.Text);
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            if(Mode == enMode.Edit)
+            clsTask newTask = createNewTask();
+            if(newTask != null)
             {
-                _tasks.Remove(_task);
-            }
-            if (this.ValidateChildren())
-            {
-                _task = createNewTask();
-                _tasks.AddLast(_task);
-                this.DialogResult = DialogResult.OK;
+                TaskCreated?.Invoke(newTask);
                 this.Close();
             }
         }

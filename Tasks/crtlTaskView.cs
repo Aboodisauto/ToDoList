@@ -12,7 +12,10 @@ namespace ToDoList.Tasks
 {
     public partial class crtlTaskView : UserControl
     {
-        Task _task;
+        clsTask _task;
+        public EventHandler leftButtonClicked;
+        public EventHandler rightButtonClicked;
+
         void LoadData() 
         {
             label1.Text = _task.taskName;
@@ -34,11 +37,21 @@ namespace ToDoList.Tasks
                 BackColor = Color.Green;
             }
         }
-        public crtlTaskView(Task Task)
+        public crtlTaskView(clsTask Task)
         {
             InitializeComponent();
             _task = Task;
             label1.Text = _task.taskName;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            rightButtonClicked?.Invoke(this, e);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            leftButtonClicked?.Invoke(this, e);
         }
     }
 }

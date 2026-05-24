@@ -60,13 +60,14 @@
     <Compile Include="Tasks\AddNewTask.Designer.cs">
       <DependentUpon>AddNewTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tasks\clsTaskSystem.cs" />
     <Compile Include="Tasks\crtlTaskView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Tasks\crtlTaskView.Designer.cs">
       <DependentUpon>crtlTaskView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tasks\Task.cs" />
+    <Compile Include="Tasks\clsTask.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
