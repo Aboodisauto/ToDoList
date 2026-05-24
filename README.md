@@ -1,47 +1,45 @@
-ToDoList
-Introduction
-ToDoList is a simple web application for managing daily tasks. This project allows users to create, view, complete, and delete tasks, helping organize personal or professional to-do lists efficiently. The application utilizes a combination of backend and frontend technologies to provide a responsive and interactive user experience.
+# 📝 ToDoList
 
-Features
-Add new tasks with descriptions.
+<div align="center">
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#" />
+  <img src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white" alt=".NET" />
+  <img src="https://img.shields.io/badge/Windows_Forms-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="WinForms" />
+</div>
 
-View a list of all current tasks.
+<br />
 
-Mark tasks as completed.
+A lightweight, responsive desktop task management application built entirely in C# and Windows Forms. Keep track of daily tasks, stay organized, and boost productivity with a clean, native Windows interface.
 
-Delete tasks from the list.
+## ✨ Features
 
-Visual feedback for completed and pending tasks.
+- **Task Management:** Quickly add, view, and organize your daily objectives.
+- **Visual Tracking:** Clear visual distinctions between pending and completed items.
+- **Instant Deletion:** Remove tasks from the list seamlessly.
+- **Native Experience:** Built specifically for Windows desktop environments to ensure fast, responsive performance.
 
-Persistent storage of tasks using a backend database.
+## 📸 Sneak Peek
 
-Usage
-Installation
-To use ToDoList, follow these steps:
+> **Note:** Replace the line below with a screenshot or a GIF of your actual application running!
+> 
+> `![ToDoList Screenshot](placeholder-image-url.png)`
 
-1
-Clone the repository
-Clone the project to your local machine using `git clone`.
-2
-Navigate to project directory
-Change your working directory to the project folder.
-3
-Install dependencies
-Run the appropriate package manager command (e.g., `npm install` or `composer install`).
-4
-Set up environment variables
-Configure any required environment variables for database connections.
-5
-Start the application
-Use the relevant start command (e.g., `npm start`, `php artisan serve`, or similar).
-6
-Access the application
-Open your web browser and go to the provided local URL.
-Task Management
-Adding a task: Enter a task description in the input field and submit to add it to your list.
+## 💻 Tech Stack
 
-Viewing tasks: All tasks are displayed in a list format, distinguishing completed tasks from pending ones.
+- **Language:** C#
+- **Framework:** .NET / Windows Forms
+- **Architecture:** Desktop Client 
 
-Completing tasks: Click the checkbox or button next to a task to mark it as completed.
+## 🚀 Getting Started
 
-Deleting tasks: Use the delete button associated with a task to remove it from the list.
+Follow these instructions to set up the project locally on your machine.
+
+### Prerequisites
+
+- [Visual Studio](https://visualstudio.microsoft.com/) 
+- **.NET Desktop Development Workload** (installed via the Visual Studio Installer)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Aboodisauto/ToDoList.git](https://github.com/Aboodisauto/ToDoList.git)
