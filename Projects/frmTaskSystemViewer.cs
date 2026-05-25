@@ -11,15 +11,27 @@ using ToDoList.Tasks;
 
 namespace ToDoList
 {
-    public partial class Form1 : Form
+    public partial class frmTaskSystemViewer : Form
     {
         clsTaskSystem _taskSystem;
-        public Form1()
+        string projectName = "";
+        public frmTaskSystemViewer()
         {
             InitializeComponent();
             _taskSystem = new clsTaskSystem();
         }
-
+        public frmTaskSystemViewer(clsTaskSystem taskSystem,string projectname)
+        {
+            InitializeComponent();
+            _taskSystem = taskSystem;
+            this.projectName = projectname;
+        }
+        private void reset()
+        {
+            _taskSystem = new clsTaskSystem();
+            textBox1.Text = "";
+            _loadTaskstoUi();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Tasks.AddNewTask frm = new Tasks.AddNewTask();
@@ -55,17 +67,17 @@ namespace ToDoList
                 crtlTaskView taskView = new crtlTaskView(task);
                 if (leftTarget != null)
                 {
-                    taskView.leftButtonClicked += (s, e) => {
-                        _taskSystem.moveTask(task, tasks, leftTarget);
-                        _loadTaskstoUi();
-                    };
+                    taskView.leftButtonClicked += (s, e) =>
+                     {
+                         _HandleTaskMovement(task, tasks, leftTarget);
+                     };
                 }
                 if (rightTarget != null)
                 {
-                    taskView.rightButtonClicked += (s, e) => {
-                        _taskSystem.moveTask(task, tasks, rightTarget);
-                        _loadTaskstoUi();
-                    };
+                    taskView.rightButtonClicked += (s, e) =>
+                     {
+                         _HandleTaskMovement(task, tasks, rightTarget);
+                     };
                 }
                 panel.Controls.Add(taskView);
             }
@@ -78,6 +90,7 @@ namespace ToDoList
         private void Form1_Load(object sender, EventArgs e)
         {
             _loadTaskstoUi();
+            textBox1.Text = projectName;
         }
 
         
@@ -112,6 +125,17 @@ namespace ToDoList
         private void button2_Click(object sender, EventArgs e)
         {
             LoadProject();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            SaveProject();
+            this.Close();
         }
     }
 }

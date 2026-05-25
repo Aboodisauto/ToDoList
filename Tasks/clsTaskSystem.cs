@@ -65,7 +65,7 @@ namespace ToDoList.Tasks
         {
             createNecessaryDirectory();
             BinaryFormatter formatter = new BinaryFormatter();
-            if(File.Exists($"Projects/{projectName}.bin"))
+            if (File.Exists($"Projects/{projectName}.bin"))
             {
                 File.Delete($"Projects/{projectName}.bin");
             }
@@ -79,7 +79,7 @@ namespace ToDoList.Tasks
         {
             clsTaskSystem taskSystem = new clsTaskSystem();
             BinaryFormatter formatter = new BinaryFormatter();
-            if(projectName == null || !File.Exists($"Projects/{projectName}.bin"))
+            if (projectName == null || !File.Exists($"Projects/{projectName}.bin"))
             {
                 return null;
             }
@@ -88,6 +88,29 @@ namespace ToDoList.Tasks
                 taskSystem = (clsTaskSystem)formatter.Deserialize(stream);
             }
             return taskSystem;
+        }
+        public static string[] getSavedProjects()
+        {
+            string[] projectFiles = Directory.GetFiles("Projects", "*.bin");
+            for (int i = 0; i < projectFiles.Length; i++)
+            {
+                projectFiles[i] = Path.GetFileNameWithoutExtension(projectFiles[i]);
+            }
+            return projectFiles;
+        }
+        public static bool deleteProject(string projectName)
+        {
+            if (File.Exists($"Projects/{projectName}.bin"))
+            {
+                File.Delete($"Projects/{projectName}.bin");
+                return true;
+            }
+            return false;
+        }
+        public static void createProject(string projectName)
+        {
+            clsTaskSystem taskSystem = new clsTaskSystem();
+            taskSystem.saveProject(projectName);
         }
     }
 }

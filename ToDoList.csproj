@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="ChooseProjectfrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ChooseProjectfrm.Designer.cs">
+      <DependentUpon>ChooseProjectfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\frmCreateProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Projects\frmCreateProject.Designer.cs">
+      <DependentUpon>frmCreateProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\frmTaskSystemViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Projects\frmTaskSystemViewer.Designer.cs">
+      <DependentUpon>frmTaskSystemViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,8 +80,14 @@
       <DependentUpon>crtlTaskView.cs</DependentUpon>
     </Compile>
     <Compile Include="Tasks\clsTask.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="ChooseProjectfrm.resx">
+      <DependentUpon>ChooseProjectfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projects\frmCreateProject.resx">
+      <DependentUpon>frmCreateProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Projects\frmTaskSystemViewer.resx">
+      <DependentUpon>frmTaskSystemViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
